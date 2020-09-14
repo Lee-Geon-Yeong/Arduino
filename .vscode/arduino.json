@@ -1,5 +1,5 @@
 {
-    "sketch": "buzzer_ex06/buzzer_ex06.ino",
+    "sketch": "button_ex07/button_ex07.ino",
     "board": "arduino:avr:uno",
     "port": "COM3"
 }
