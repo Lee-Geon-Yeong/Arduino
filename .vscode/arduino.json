@@ -1,5 +1,5 @@
 {
-    "sketch": "lcd_SimpleTimer/lcd_SimpleTimer.ino",
+    "sketch": "buzzer_ex06/buzzer_ex06.ino",
     "board": "arduino:avr:uno",
     "port": "COM3"
 }
