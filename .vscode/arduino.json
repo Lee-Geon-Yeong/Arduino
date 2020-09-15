@@ -1,5 +1,5 @@
 {
-    "sketch": "poten_ex03/poten_ex03.ino",
+    "sketch": "joystick_ex01/joystick_ex01.ino",
     "board": "arduino:avr:uno",
     "port": "COM3"
 }
