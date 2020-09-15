@@ -1,41 +1,49 @@
 #include "Led.h"
 #include "Button.h"
-Led led(4);
-Button btn(11);
-// int pin_button = 11;
-// boolean state_previous = true;
-// boolean state_current;
+#include <SimpleTimer.h>
 
+SimpleTimer timer;
+Led led1(7);
+Led led2(4);
+Led led3(2);
+Button btn1(11);
+Button btn2(10);
+Button btn3(9);
 
+bool blinkPlay=false;
+int blinkTimer=-1;
+
+void led2OnOff(){
+    led2.toggle();
+}
+void led3Blink(){
+    led3.toggle();
+}
+void led3BlinkControl(){
+    blinkPlay=!blinkPlay;
+    if(!blinkPlay){
+        led3.off();
+    }
+    timer.toggle(blinkTimer);
+}
 void setup()
 {
     Serial.begin(9600);
-//  pinMode(pin_button, INPUT_PULLUP);
-//  pinMode(led, OUTPUT);
+    btn2.setCallback(led2OnOff);
+    btn3.setCallback(led3BlinkControl);
+    blinkTimer=timer.setInterval(500, led3Blink);
+    timer.disable(blinkTimer);
+//    btn.setCallback(work);
 }
-void work(){
-    led.toggle();
-//  int ledState=digitalRead(led);
-//  digitalWrite(led, !ledState);
-//  count++;
-//  Serial.println(count);
-}
+// void work(){
+//     led.toggle();
+
+// }
+
 void loop()
 {
-    led.set(btn.read()); // because it is pull up button, so do !
-    
-    // if (!state_current)
-    // { // 누른 경우
-    //     if (state_previous == true)
-    //     {
-
-    //         state_previous = false;
-    //         work();
-    //     }
-    //     delay(5); // 추가
-    // }
-    // else
-    // {
-    //     state_previous = true;
-    // }
+    timer.run();
+    led1.set(btn1.read());
+    btn2.check();
+    btn3.check();
 }

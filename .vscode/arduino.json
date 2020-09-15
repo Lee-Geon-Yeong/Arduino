@@ -1,5 +1,5 @@
 {
-    "sketch": "button_ex07/button_ex07.ino",
+    "sketch": "poten_ex03/poten_ex03.ino",
     "board": "arduino:avr:uno",
     "port": "COM3"
 }
