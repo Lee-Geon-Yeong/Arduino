@@ -2,6 +2,7 @@
 #include <Button.h>
 #include <AnalogSensor.h>
 #include <SimpleTimer.h>
+#include <Servo.h>
 
 AnalogSensor jX(A0, 0, 1023);
 AnalogSensor jY(A1, 0, 1023);
