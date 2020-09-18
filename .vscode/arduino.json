@@ -1,5 +1,6 @@
 {
-    "sketch": "ultra_ex01/ultra_ex01.ino",
+    "sketch": "pir_ex01/pir_ex01.ino",
     "board": "arduino:avr:uno",
-    "port": "COM3"
+    "port": "COM3",
+    "programmer": "AVR ISP"
 }
